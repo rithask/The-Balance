@@ -1,0 +1,25 @@
+{% extends 'thebalance/index.html' %}
+
+{% block title %}
+    Add Expense
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 p-4">
+                <h1>Add Expense</h1>
+                <form action="{% url 'add_expense' %}" method="POST">
+                    <div class="form-group">
+                        {% csrf_token %}
+                        {{ form }}
+                        <input type="submit" value="Add Expense" class="btn btn-danger">
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
